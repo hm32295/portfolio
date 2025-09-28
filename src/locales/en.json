@@ -1,0 +1,37 @@
+{
+  "about_text": "I am Hamza Mohamed, a passionate Quran teacher and Islamic sciences instructor with over five years of experience. I also specialize in Front-End Development, building responsive and interactive web applications using React.js, Next.js, TypeScript, and modern design tools. I combine creativity and technical skills to deliver engaging digital experiences that meet users’ needs effectively.",
+
+  "home": "Home",
+  "about": "About",
+  "projects": "Projects",
+  "contact": "Contact",
+  "theme": "Theme",
+  "language": "Language",
+  "portfolio": "Portfolio",
+
+  "projects_title": "My Projects",
+  "live": "Live",
+  "code": "Code",
+  "view_description": "View Description",
+  "hide_description": "Hide Description",
+  "project_descriptions": {
+    "1": "A brief description of the project.",
+    "2": "Full-featured Hotel Management System with booking and user roles.",
+    "3": "Responsive PMS with dashboards, tasks, and analytics.",
+    "4": "Dashboard for managing recipes, categories, and users."
+  },
+  "about_title": "About Me",
+  "about_text_me": "I am a Front-End Developer specializing in React.js and Next.js. I have worked on multiple team projects including Food Management System, Hotel Management System, Project Management System, and Quizzes projects. I continuously improve my skills and currently learning Node.js and MongoDB to build MERN stack applications.",
+  "skills_known": "Skills I Know",
+  "skills_learning": "Skills I am Learning",
+
+  "contact_title": "Contact Me",
+  "contact_description": "You can reach me via phone, WhatsApp, email, or check my profiles on GitHub and LinkedIn.",
+  "phone": "Phone",
+  "whatsapp": "WhatsApp",
+  "github": "GitHub",
+  "linkedin": "LinkedIn",
+  "email": "Email"
+
+
+}

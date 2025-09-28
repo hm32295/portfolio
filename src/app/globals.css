@@ -1,26 +1,183 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
+
+/* globals.css */
+
+/* ===== Default Fonts ===== */
+html {
+    scroll-behavior: smooth;
+}
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --font-header: 'Montserrat', 'Poppins', sans-serif;
+    --font-body: 'Inter', 'Roboto', sans-serif;
+    --transition-speed: 0.3s;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ===== Modern Theme ===== */
+[data-theme="modern"] {
+    --color-primary: #4F46E5;
+    --color-primary-light: #6366F1;
+    --color-secondary: #F59E0B;
+    --color-secondary-light: #10B981;
+    --color-background-light: #F9FAFB;
+    --color-background-dark: #111827;
+    --color-text-primary: #111827;
+    --color-text-secondary: #6B7280;
+    --radius-card: 12px;
+    --shadow-card: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ===== Creative Theme ===== */
+[data-theme="creative"] {
+    --color-primary: #FF4D6D;
+    --color-primary-light: #FF6F91;
+    --color-secondary: #FFC300;
+    --color-secondary-light: #FFD60A;
+    --color-background-light: #FFF8F1;
+    --color-background-dark: #1B1B2F;
+    --color-text-primary: #1B1B2F;
+    --color-text-secondary: #555555;
+    --radius-card: 10px;
+    --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* ===== Elegant Theme ===== */
+[data-theme="elegant"] {
+    --color-primary: #0D3B66;
+    --color-primary-light: #FAF0CA;
+    --color-secondary: #F4D35E;
+    --color-secondary-light: #EE6C4D;
+    --color-background-light: #FAFAFA;
+    --color-background-dark: #0B0C10;
+    --color-text-primary: #0B0C10;
+    --color-text-secondary: #555555;
+    --radius-card: 8px;
+    --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Soft Theme ===== */
+[data-theme="soft"] {
+    --color-primary: #A0C4FF;
+    --color-primary-light: #BDB2FF;
+    --color-secondary: #FFADAD;
+    --color-secondary-light: #FFD6A5;
+    --color-background-light: #FFFFFF;
+    --color-background-dark: #222222;
+    --color-text-primary: #222222;
+    --color-text-secondary: #555555;
+    --radius-card: 12px;
+    --shadow-card: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== Futuristic Theme ===== */
+[data-theme="futuristic"] {
+    --color-primary: #00FFFF;
+    --color-primary-light: #66FFFF;
+    --color-secondary: #FF00FF;
+    --color-secondary-light: #FF66FF;
+    --color-background-light: #0F0F1F;
+    --color-background-dark: #05050A;
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #AAAAAA;
+    --radius-card: 14px;
+    --shadow-card: 0 4px 20px rgba(0, 255, 255, 0.2);
+}
+
+/* ===== Nature Theme ===== */
+[data-theme="nature"] {
+    --color-primary: #2E8B57;
+    --color-primary-light: #3CB371;
+    --color-secondary: #FFD700;
+    --color-secondary-light: #FFE135;
+    --color-background-light: #F0FFF0;
+    --color-background-dark: #1B3B1B;
+    --color-text-primary: #1B3B1B;
+    --color-text-secondary: #4F4F4F;
+    --radius-card: 12px;
+    --shadow-card: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Cyberpunk Theme ===== */
+[data-theme="cyberpunk"] {
+    --color-primary: #FF0080;
+    --color-primary-light: #FF66A3;
+    --color-secondary: #00FFFF;
+    --color-secondary-light: #66FFFF;
+    --color-background-light: #0A0A0A;
+    --color-background-dark: #050505;
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #AAAAAA;
+    --radius-card: 10px;
+    --shadow-card: 0 4px 15px rgba(255, 0, 128, 0.3);
+}
+
+/* ===== Global Styles ===== */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-body);
+    background-color: var(--color-background-light);
+    color: var(--color-text-primary);
+    transition: all var(--transition-speed) ease;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-header);
+}
+
+/* ===== Cards ===== */
+.card {
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    background-color: var(--color-background-light);
+    padding: 1rem;
+    transition: all var(--transition-speed) ease;
+    cursor: pointer;
+}
+
+/* ===== Hover Animations ===== */
+.card:hover {
+    transform: translateY(-6px) rotateX(2deg);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+}
+
+/* ===== Buttons ===== */
+button {
+    font-family: var(--font-header);
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Gradients Animation ===== */
+.gradient-bg {
+    background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+    background-size: 400% 400%;
+    animation: gradientMove 6s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }

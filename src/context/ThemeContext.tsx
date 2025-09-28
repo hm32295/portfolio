@@ -2,7 +2,7 @@
 "use client";
 import { createContext, useState, useEffect, ReactNode } from "react";
 
-type Theme =
+export type Theme =
   | "modern"
   | "creative"
   | "elegant"

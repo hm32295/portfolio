@@ -13,8 +13,8 @@ export default function ContactPage() {
   }, [i18n.language]);
 
   const contactLinks = [
-    { label: t("phone"), icon: <FaPhone />, url: "tel:01124475467" },
-    { label: t("whatsapp"), icon: <FaWhatsapp />, url: "https://wa.me/201124475467" },
+    { label: t("phone"), icon: <FaPhone />, url: "tel:01124475468" },
+    { label: t("whatsapp"), icon: <FaWhatsapp />, url: "https://wa.me/201124475468" },
     { label: t("github"), icon: <FaGithub />, url: "https://github.com/hm32295" },
     { label: t("linkedin"), icon: <FaLinkedin />, url: "https://www.linkedin.com/in/hamza-mohamed-3015a2293/" },
     { label: t("email"), icon: <FaEnvelope />, url: "mailto:hm32295@gmail.com" },

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { FiMenu, FiX } from "react-icons/fi";
 import { MdLanguage } from "react-icons/md";
 import { CiHome, CiUser, CiFolderOn, CiMail } from "react-icons/ci";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import "../config/i18n";
 
@@ -18,6 +18,7 @@ export default function Navbar() {
 
   // تغيير اتجاه الصفحة بناءً على اللغة
   useEffect(() => {
+    document.documentElement.style.transition = "all 0.5s ease";
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
   }, [lang]);
 
@@ -44,15 +45,19 @@ export default function Navbar() {
     { icon: <CiMail />, label: t("contact"), href: "contact" },
   ];
 
-  const mobileMenuVariants = {
-    hidden: { y: "-100%", opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.4, ease: [0.42,0,0.58,1], staggerChildren: 0.1 } },
-    exit: { y: "-100%", opacity: 0, transition: { duration: 0.3, ease: [0.42,0,0.58,1] } },
+  const mobileMenuVariants: Variants = {
+    hidden: { y: -100, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1, 
+      transition: { duration: 0.4, ease: "easeInOut", staggerChildren: 0.1 } 
+    },
+    exit: { y: -100, opacity: 0, transition: { duration: 0.3, ease: "easeInOut" } },
   };
 
-  const linkVariants = {
+  const linkVariants: Variants = {
     hidden: { opacity: 0, y: -20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: [0.42,0,0.58,1] } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeInOut" } },
   };
 
   return (
@@ -126,7 +131,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {open && (
           <motion.div

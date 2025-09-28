@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaExternalLinkAlt, FaGithub, FaTimes } from "react-icons/fa";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useTranslation } from "react-i18next";
 
 import foodApp from '@/../public/food app.png';
@@ -20,9 +20,9 @@ const projects = [
 export default function ProjectsPage() {
   const { t, i18n } = useTranslation();
   const [descOpen, setDescOpen] = useState<number | null>(null);
-  const [imageOpen, setImageOpen] = useState<string | null>(null);
+  const [imageOpen, setImageOpen] = useState<string | StaticImageData | null>(null);
 
-  // تغيير اتجاه الصفحة حسب اللغة
+  
   useEffect(() => {
     document.documentElement.dir = i18n.language === "ar" ? "rtl" : "ltr";
   }, [i18n.language]);
@@ -40,7 +40,7 @@ export default function ProjectsPage() {
         {projects.map((project) => {
           const isDescOpen = descOpen === project.id;
           return (
-            <motion.div key={project.id} className="relative rounded-3xl overflow-hidden shadow-lg cursor-pointer group" whileHover={{ scale: 1.03 }}>
+            <motion.div key={project.id} className="relative p-2 rounded-3xl overflow-hidden shadow-lg cursor-pointer group" whileHover={{ scale: 1.03 }}>
 
               {/* Image */}
               <div onClick={() => setImageOpen(project.images[0])} className="relative w-full h-80 overflow-hidden rounded-3xl">
@@ -86,9 +86,9 @@ export default function ProjectsPage() {
       {/* Image Fullscreen Overlay */}
       {imageOpen && (
         <div onClick={() => setImageOpen(null)} className="fixed max-h-full inset-0 bg-black/80 flex items-center justify-center z-50 cursor-pointer">
-          <div className="relative w-full max-w-4xl mx-4">
-            <Image src={imageOpen} alt="Project Image" width={1200} height={800} className="rounded-xl w-full h-auto object-contain" />
-            <button onClick={() => setImageOpen(null)} className="absolute top-4 right-4 text-white text-2xl z-50">
+          <div  onClick={(e)=>e.stopPropagation()} className="relative w-full h-[80%] max-w-4xl mx-4 bg-white">
+            <Image src={imageOpen} alt="Project Image" width={1200} height={800} className="rounded-xl w-full h-full object-contain" />
+            <button onClick={() => setImageOpen(null)} className="absolute top-4 right-4 bg-gray-600 text-white text-2xl z-50">
               <FaTimes />
             </button>
           </div>

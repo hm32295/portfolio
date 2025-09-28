@@ -11,7 +11,6 @@ export default function HomePage() {
   const [displayedText, setDisplayedText] = useState("");
   const [fullText, setFullText] = useState("");
 
-  // تحديث النصوص عند تغيير اللغة
   useEffect(() => {
     const text = t('about_text', { defaultValue: "" });
     setFullText(typeof text === "string" ? text : "");

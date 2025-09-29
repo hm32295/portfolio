@@ -41,7 +41,7 @@ export default function HomePage() {
     <main className="min-h-screen pt-24 flex flex-col items-center justify-start px-6 py-6 md:py-12 bg-[var(--color-background-light)] transition-all duration-500">
 
       {/* Hero Section */}
-      <section className={`w-full max-w-6xl flex flex-col md:flex-row items-center justify-between gap-8 ${isRTL ? 'md:flex-row-reverse' : ''}`}>
+      <section className={`w-full max-w-6xl flex flex-col md:flex-row items-center justify-between gap-5 ${isRTL ? 'md:flex-row-reverse' : ''}`}>
         <motion.div
           initial={{ opacity: 0, x: isRTL ? 50 : -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -63,7 +63,7 @@ export default function HomePage() {
           transition={{ duration: 0.6 }}
           className="flex-1 flex justify-center md:justify-end"
         >
-          <div className="w-64 h-64 md:w-80 md:h-80 rounded-full gradient-bg shadow-2xl flex items-center justify-center overflow-hidden">
+          <div className="w-72 h-72 md:w-80 md:h-80 rounded-full gradient-bg shadow-2xl flex items-center justify-center overflow-hidden">
             <Image src={logo} alt="logo" className="w-full h-full object-cover object-top" />
           </div>
         </motion.div>

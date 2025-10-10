@@ -64,7 +64,7 @@ export default function HomePage() {
           className="flex-1 flex justify-center md:justify-end"
         >
           <div className="w-72 h-72 md:w-80 md:h-80 rounded-full gradient-bg shadow-2xl flex items-center justify-center overflow-hidden">
-            <Image src={logo} alt="logo" className="w-full h-full object-cover object-top" />
+            {/* <Image src={logo} alt="logo" className="w-full h-full object-cover object-top" /> */}
           </div>
         </motion.div>
       </section>

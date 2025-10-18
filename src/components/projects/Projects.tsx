@@ -9,12 +9,16 @@ import foodApp from '@/../public/food app.png';
 import hotel from '@/../public/hotel.png';
 import pms from '@/../public/pmr.png';
 import quiz from '@/../public/quiz.png';
+import portfolio from '@/../public/portfoilo.png';
+import skytrip from '@/../public/skytripturs.png';
 
 const projects = [
-  { id: 1, title: "Quizzes System", images: [quiz], techs: ["React.js","Next.js","Tailwind CSS","Redux Toolkit","i18next"], liveUrl:"https://quizzes-implementation.netlify.app/", githubUrl:"https://github.com/hm32295/Quiz" },
-  { id: 2, title: "Hotel System", images: [hotel], techs:["React.js","TypeScript","MUI","Stripe","Swiper"], liveUrl:"https://h-s-m.netlify.app/", githubUrl:"https://github.com/hm32295/Hotel-System" },
-  { id: 3, title: "Project Management System", images: [pms], techs:["React.js","Bootstrap","Chart.js","React Hook Form"], liveUrl:"https://projectmangementsystem.netlify.app/", githubUrl:"https://github.com/hm32295/PMS" },
-  { id: 4, title: "Food App", images: [foodApp], techs:["React.js","JavaScript","Axios","Bootstrap","React Hook Form"], liveUrl:"https://food-application-hamza.netlify.app/", githubUrl:"https://github.com/hm32295/foodApp" },
+  { id: 1, title: "Quizzes System", images: [quiz], techs: ["React.js","NextJS","Tailwind CSS","Redux Toolkit","i18next"], liveUrl:"https://quizzes-implementation.netlify.app/", githubUrl:"https://github.com/hm32295/Quiz" },
+  { id: 2, title: "Hotel System", images: [hotel], techs:["ReactJS","TypeScript","MUI","Stripe","Swiper"], liveUrl:"https://h-s-m.netlify.app/", githubUrl:"https://github.com/hm32295/Hotel-System" },
+  { id: 3, title: "Project Management System", images: [pms], techs:["ReactJS","Bootstrap","ChartJS","React Hook Form"], liveUrl:"https://projectmangementsystem.netlify.app/", githubUrl:"https://github.com/hm32295/PMS" },
+  { id: 4, title: "Food App", images: [foodApp], techs:["ReactJS","JavaScript","Axios","Bootstrap","React Hook Form"], liveUrl:"https://food-application-hamza.netlify.app/", githubUrl:"https://github.com/hm32295/foodApp" },
+  { id: 5, title: "portfolio", images: [portfolio], techs:["NextJS","JavaScript,Tailwind"], liveUrl:"https://portfoilo-hamza.netlify.app/", githubUrl:"https://github.com/hm32295/portfolio" },
+  { id: 6, title: "Sky-Trip-Tours", images: [skytrip], techs:["NextJS","JavaScript","Tailwind","farmer-animtation"], liveUrl:"https://skytriptours.netlify.app/", githubUrl:"https://github.com/hm32295/portfolio" },
 ];
 
 export default function ProjectsPage() {
@@ -31,7 +35,7 @@ export default function ProjectsPage() {
     <main id="projects" className="min-h-screen px-6 py-6 md:py-12 bg-[var(--color-background-light)] transition-all duration-500">
 
       {/* Header */}
-      <motion.h1 initial={{ opacity: 0, y: -60 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-4xl md:text-5xl font-extrabold text-[var(--color-primary)] text-center mb-24">
+      <motion.h1 initial={{ opacity: 0, y: -60 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-4xl capitalize md:text-5xl font-extrabold text-[var(--color-primary)] text-center mb-24">
         {t("projects_title")}
       </motion.h1>
 
@@ -48,7 +52,7 @@ export default function ProjectsPage() {
               </div>
 
               {/* Title */}
-              <h3 className="text-xl md:text-2xl font-bold mt-4">{project.title}</h3>
+              <h3 className="text-xl md:text-2xl font-bold capitalize mt-4">{project.title}</h3>
 
               {/* Actions */}
               <div className="flex gap-4 mt-3 justify-center">

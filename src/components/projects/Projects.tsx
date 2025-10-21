@@ -73,7 +73,7 @@ export default function ProjectsPage() {
               <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: isDescOpen ? "auto" : 0, opacity: isDescOpen ? 1 : 0 }} transition={{ duration: 0.4 }} className="overflow-hidden mt-2 text-gray-700">
                 {isDescOpen && <p className="p-2 bg-gray-100 rounded-lg">{t(`project_descriptions.${project.id}`)}</p>}
               </motion.div>
-
+ 
               {/* Techs */}
               <div className="flex flex-wrap gap-2 mt-3">
                 {project.techs.map((tech, idx) => (

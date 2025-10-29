@@ -2,7 +2,7 @@
 
 import { useTranslation } from "react-i18next";
 import { FaDownload } from "react-icons/fa";
-const fileName="Hamza-Mohamed.pdf" 
+const fileName="Hamza_Frontend_React.pdf" 
 
 
 export default function DownloadCV() {
